@@ -11,13 +11,13 @@
 body {
   display: grid;
   background-color: #ececec;
-  grid-template-columns: repeat(3, 33%);
-  grid-template-rows: repeat(3, 30%);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   margin: 0 auto;
   padding: 1.25em;
   width: 70%;
   height: 95vh;
-  gap: 20px;
+  gap: var(--spacing);
 }
 
 header {
@@ -27,13 +27,13 @@ header {
 }
 
 header > h1 {
-  color: white;
+  color: var(--primary-color);
   margin-right: auto;
   margin-left: auto;
 }
 
 header > p {
-  color: white;
+  color: var(--primary-color);
   margin: 5%;
   text-align: justify;
 }
@@ -45,12 +45,12 @@ main {
 }
 
 main > h2 {
-  color: #33c6ce;
+  color: var(--blue-color);
   text-align: center;
 }
 
 .school {
-  /* background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg); */
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
   object-fit: cover;
 }
 
@@ -82,4 +82,82 @@ main > h2 {
 footer {
   grid-column: 2 / 4;
   background-color: var(--orange-color);
+  padding: 0em 1.563em;
+}
+
+footer > h3 {
+  color: var(--primary-color);
+  margin-top: 1.563em;
+}
+
+footer > p {
+  color: var(--primary-color);
+  margin-top: 1.875em;
+}
+
+footer > button {
+  width: 12.5em;
+  height: 4.375em;
+  font-weight: 500;
+  border: 1px solid var(--primary-color);
+  margin-top: 0.625em;
+}
+
+footer > button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 75em) {
+  body {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  footer {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 48em) {
+  body {
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1em;
+    margin: 0;
+  }
+
+  header {
+    grid-row: 1 / 2;
+    height: 37.5em;
+  }
+
+  header > h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.75em;
+  }
+
+  .alumni,
+  .school,
+  .student,
+  .time {
+    height: 18.75em;
+  }
+
+  main > h2 {
+    height: 18.75em;
+    display: grid;
+    align-items: center;
+  }
+
+  footer {
+    grid-column: 1 / 2;
+    padding: 0.8em 1.2em;
+  }
+
+  footer > button {
+    border: 1px solid var(--primary-color);
+  }
 }
